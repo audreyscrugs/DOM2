@@ -2,7 +2,19 @@ $(document).ready(function() {
 
   $("button#hello").click(function() {
       $("ul#user").prepend("<li>Hello!</li>");
-      $("ul#webpage").children("li").first().slideUp( 300 ).delay( 800 ).fadeIn( 400 ).prepend("<li>Why hello there!</li>");
+      $("ul#webpage").prepend("<li>Why, hello there!</li>");
+
+      $("ul#webpage").children("li").first().click(function() {
+        alert('hi');
+      });
+
+      $("ul#user").children("li").first().click(function() {
+        alert('hi');
+      });
+  });
+
+  $("li").click(function() {
+    $(this).remove();
   });
 
   $("button#goodbye").click(function() {
